@@ -32,55 +32,55 @@
 	
  Examples:
  
- `CREATE TABLE members (
-    firstname VARCHAR(25) NOT NULL,
-    lastname VARCHAR(25) NOT NULL,
-    username VARCHAR(16) NOT NULL,
-    email VARCHAR(35),
-    joined DATE NOT NULL
-)
-PARTITION BY KEY(joined)
-PARTITIONS 6;`
+	 `CREATE TABLE members (
+	    firstname VARCHAR(25) NOT NULL,
+	    lastname VARCHAR(25) NOT NULL,
+	    username VARCHAR(16) NOT NULL,
+	    email VARCHAR(35),
+	    joined DATE NOT NULL
+	)
+	PARTITION BY KEY(joined)
+	PARTITIONS 6;`
 
-`CREATE TABLE members (
-    firstname VARCHAR(25) NOT NULL,
-    lastname VARCHAR(25) NOT NULL,
-    username VARCHAR(16) NOT NULL,
-    email VARCHAR(35),
-    joined DATE NOT NULL
-)
-PARTITION BY RANGE( YEAR(joined) ) (
-    PARTITION p0 VALUES LESS THAN (1960),
-    PARTITION p1 VALUES LESS THAN (1970),
-    PARTITION p2 VALUES LESS THAN (1980),
-    PARTITION p3 VALUES LESS THAN (1990),
-    PARTITION p4 VALUES LESS THAN MAXVALUE
-);`
+	`CREATE TABLE members (
+	    firstname VARCHAR(25) NOT NULL,
+	    lastname VARCHAR(25) NOT NULL,
+	    username VARCHAR(16) NOT NULL,
+	    email VARCHAR(35),
+	    joined DATE NOT NULL
+	)
+	PARTITION BY RANGE( YEAR(joined) ) (
+	    PARTITION p0 VALUES LESS THAN (1960),
+	    PARTITION p1 VALUES LESS THAN (1970),
+	    PARTITION p2 VALUES LESS THAN (1980),
+	    PARTITION p3 VALUES LESS THAN (1990),
+	    PARTITION p4 VALUES LESS THAN MAXVALUE
+	);`
 
-`CREATE TABLE trb3 (id INT, name VARCHAR(50), purchased DATE)
-    PARTITION BY RANGE( YEAR(purchased) ) (
-        PARTITION p0 VALUES LESS THAN (1990),
-        PARTITION p1 VALUES LESS THAN (1995),
-        PARTITION p2 VALUES LESS THAN (2000),
-        PARTITION p3 VALUES LESS THAN (2005)
-    );`
+	`CREATE TABLE trb3 (id INT, name VARCHAR(50), purchased DATE)
+	    PARTITION BY RANGE( YEAR(purchased) ) (
+		PARTITION p0 VALUES LESS THAN (1990),
+		PARTITION p1 VALUES LESS THAN (1995),
+		PARTITION p2 VALUES LESS THAN (2000),
+		PARTITION p3 VALUES LESS THAN (2005)
+	    );`
     
-`CREATE TABLE t3 (
-    fname VARCHAR(50) NOT NULL,
-    lname VARCHAR(50) NOT NULL,
-    region_code TINYINT UNSIGNED NOT NULL,
-    dob DATE NOT NULL
-)
-PARTITION BY LIST(region_code) (
-    PARTITION r0 VALUES IN (1, 3),
-    PARTITION r1 VALUES IN (2, 5, 8),
-    PARTITION r2 VALUES IN (4, 9),
-    PARTITION r3 VALUES IN (6, 7, 10)
-);`
+	`CREATE TABLE t3 (
+	    fname VARCHAR(50) NOT NULL,
+	    lname VARCHAR(50) NOT NULL,
+	    region_code TINYINT UNSIGNED NOT NULL,
+	    dob DATE NOT NULL
+	)
+	PARTITION BY LIST(region_code) (
+	    PARTITION r0 VALUES IN (1, 3),
+	    PARTITION r1 VALUES IN (2, 5, 8),
+	    PARTITION r2 VALUES IN (4, 9),
+	    PARTITION r3 VALUES IN (6, 7, 10)
+	);`
 
-`SELECT * FROM employees PARTITION (p1);`
+	`SELECT * FROM employees PARTITION (p1);`
 
-`SELECT * FROM employees PARTITION (po, p2) WHERE lname LIKE 'S%'`
+	`SELECT * FROM employees PARTITION (po, p2) WHERE lname LIKE 'S%'`
 
 3. #### Clustering
 
