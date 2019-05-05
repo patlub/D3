@@ -25,3 +25,70 @@
 	`ALTER TABLE employees ADD INDEX (number);`
 	
 	Once this index is set, next time you I to get the information for employee number 7, the service will go directly             to it using the index and will return the information much faster.
+	
+1. #### Partitioning
+
+	Partitioning enables the distribution of portions of individual tables across a file system according to rules which you can set largely as needed. In effect, different portions of a table are stored as separate tables in different locations. The user-selected rule by which the division of data is accomplished is known as a partitioning function
+	
+ Examples:
+ 
+ `CREATE TABLE members (
+    firstname VARCHAR(25) NOT NULL,
+    lastname VARCHAR(25) NOT NULL,
+    username VARCHAR(16) NOT NULL,
+    email VARCHAR(35),
+    joined DATE NOT NULL
+)
+PARTITION BY KEY(joined)
+PARTITIONS 6;`
+
+`CREATE TABLE members (
+    firstname VARCHAR(25) NOT NULL,
+    lastname VARCHAR(25) NOT NULL,
+    username VARCHAR(16) NOT NULL,
+    email VARCHAR(35),
+    joined DATE NOT NULL
+)
+PARTITION BY RANGE( YEAR(joined) ) (
+    PARTITION p0 VALUES LESS THAN (1960),
+    PARTITION p1 VALUES LESS THAN (1970),
+    PARTITION p2 VALUES LESS THAN (1980),
+    PARTITION p3 VALUES LESS THAN (1990),
+    PARTITION p4 VALUES LESS THAN MAXVALUE
+);`
+
+`CREATE TABLE trb3 (id INT, name VARCHAR(50), purchased DATE)
+    PARTITION BY RANGE( YEAR(purchased) ) (
+        PARTITION p0 VALUES LESS THAN (1990),
+        PARTITION p1 VALUES LESS THAN (1995),
+        PARTITION p2 VALUES LESS THAN (2000),
+        PARTITION p3 VALUES LESS THAN (2005)
+    );`
+    
+`CREATE TABLE t3 (
+    fname VARCHAR(50) NOT NULL,
+    lname VARCHAR(50) NOT NULL,
+    region_code TINYINT UNSIGNED NOT NULL,
+    dob DATE NOT NULL
+)
+PARTITION BY LIST(region_code) (
+    PARTITION r0 VALUES IN (1, 3),
+    PARTITION r1 VALUES IN (2, 5, 8),
+    PARTITION r2 VALUES IN (4, 9),
+    PARTITION r3 VALUES IN (6, 7, 10)
+);`
+
+`SELECT * FROM employees PARTITION (p1);`
+
+`SELECT * FROM employees PARTITION (po, p2) WHERE lname LIKE 'S%'`
+
+3. #### Clustering
+
+	Database Clustering is the process of combining more than one servers or instances connecting a single database. Sometimes one server may not be adequate to manage the amount of data or the number of requests, that is when a Data Cluster is needed. Database clustering, SQL server clustering, and SQL clustering are closely associated with SQL is the language used to manage the database information.
+	
+	The main advantages of database clustering are; Data redundancy, Load balancing, High availability, and lastly, Monitoring and automation.
+	
+4. #### Striping
+
+	Data striping is the technique of segmenting logically sequential data, such as a file, so that consecutive segments are stored on different physical storage devices. In databases, this is mostly essential during data backups
+Striping is useful when a processing device requests data more quickly than a single storage device can provide it. By spreading segments across multiple devices which can be accessed concurrently, total data throughput is increased. It is also a useful method for balancing I/O load across an array of disks.
