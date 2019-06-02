@@ -1,6 +1,6 @@
 ## Algorithms
 
-1. ### Breadth First Search
+### 1. Breadth First Search
 
     Breadth-first search (BFS) is an algorithm for traversing or searching tree or graph data structures. It starts at the tree root , and explores all of the neighbor nodes at the present depth prior to moving on to the nodes at the next depth level.
 
@@ -13,7 +13,7 @@
     
     [https://github.com/patlub/algorithms/blob/cf59c5235df9fdcb72514d73e7cc157e3bca837b/graph.js#L58](https://github.com/patlub/algorithms/blob/cf59c5235df9fdcb72514d73e7cc157e3bca837b/graph.js#L58)
     
-2. ### Depth First Search
+### 2. Depth First Search
     
     Depth-first search (DFS) is an algorithm for traversing or searching tree or graph data structures. The algorithm starts at the root node (selecting some arbitrary node as the root node in the case of a graph) and explores as far as possible along each branch before backtracking.
    
@@ -23,10 +23,10 @@
     
     Time complexity is O(V + E)
     
-3. ### Sorting
+### 3. Sorting
     I have Implemented binary search, bubblesort, insertion sort, linear sort, heap sort, merge sort, quick sort, selection sort, shellsort algorithms - [here](https://github.com/patlub/algorithms)    
     
-4. ### A* Search
+### 4. A* Search
     A* is an informed search algorithm, or a best-first search, meaning that it is formulated in terms of weighted graphs: starting from a specific starting node of a graph, it aims to find a path to the given goal node having the smallest cost (least distance travelled, shortest time, etc.). It does this by maintaining a tree of paths originating at the start node and extending those paths one edge at a time until its termination criterion is satisfied.
 
     At each iteration of its main loop, A* needs to determine which of its paths to extend. It does so based on the cost of the path and an estimate of the cost required to extend the path all the way to the goal
@@ -50,7 +50,7 @@
 
     ```
     
-5. ### Hashing    
+### 5. Hashing    
     A hashing algorithm is a cryptographic hash function. It is a mathematical algorithm that maps data of arbitrary size to a hash of a fixed size. It’s designed to be a one-way function, infeasible to invert. However, nowadays several hashing algorithms are being compromised. This happened to MD5, for example — a widely known hash function designed to be a cryptographic hash function, which is now so easy to reverse — that we could only use for verifying data against unintentional corruption.
 
     Characteristics of a good cryptographic hash function are:
