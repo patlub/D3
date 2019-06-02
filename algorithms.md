@@ -7,7 +7,7 @@
     #### Time and space complexity
     The time complexity can be expressed as O(|V|+|E|), since every vertex and every edge will be explored in the worst case. |V| is the number of vertices and |E| is the number of edges in the graph. Note that O(|E|) may vary between O(1) and O(|V|^{2}), depending on how sparse the input graph is.
 
-    When the number of vertices in the graph is known ahead of time, and additional data structures are used to determine which vertices have already been added to the queue, the space complexity can be expressed as O(|V|), where |V| is the cardinality of the set of vertices. This is in addition to the space required for the graph itself, which may vary depending on the graph representation used by an implementation of the algorithm.
+    The space complexity can be expressed as O(|V|), where |V| is the set of vertices. 
     
     #### Code implementation
     
@@ -16,17 +16,12 @@
 2. ### Depth First Search
     
     Depth-first search (DFS) is an algorithm for traversing or searching tree or graph data structures. The algorithm starts at the root node (selecting some arbitrary node as the root node in the case of a graph) and explores as far as possible along each branch before backtracking.
-    
-    
-    This recursive nature of DFS can be implemented using stacks. The basic idea is as follows:
-Pick a starting node and push all its adjacent nodes into a stack.
-Pop a node from stack to select the next node to visit and push all its adjacent nodes into a stack.
-Repeat this process until the stack is empty. However, ensure that the nodes that are visited are marked. This will prevent you from visiting the same node more than once. If you do not mark the nodes that are visited and you visit the same node more than once, you may end up in an infinite loop.
+   
 
     #### Code implementation
     [https://github.com/patlub/algorithms/blob/cf59c5235df9fdcb72514d73e7cc157e3bca837b/graph.js#L81](https://github.com/patlub/algorithms/blob/cf59c5235df9fdcb72514d73e7cc157e3bca837b/graph.js#L81)
     
-    Time complexity is O(V + E), when implemented using an adjacency list.
+    Time complexity is O(V + E)
     
 3. ### A* Search
     A* is an informed search algorithm, or a best-first search, meaning that it is formulated in terms of weighted graphs: starting from a specific starting node of a graph, it aims to find a path to the given goal node having the smallest cost (least distance travelled, shortest time, etc.). It does this by maintaining a tree of paths originating at the start node and extending those paths one edge at a time until its termination criterion is satisfied.
