@@ -46,9 +46,11 @@
      }
 
     ```
+3. ### Sorting
+Implementation of binary search, bubblesort, insertion sort, linear sort, merge sort, quick sort, selection sort, shellsort algorithms - [here](https://github.com/patlub/algorithms)
     
     
-3. ### Hashing    
+4. ### Hashing    
     A hashing algorithm is a cryptographic hash function. It is a mathematical algorithm that maps data of arbitrary size to a hash of a fixed size. It’s designed to be a one-way function, infeasible to invert. However, nowadays several hashing algorithms are being compromised. This happened to MD5, for example — a widely known hash function designed to be a cryptographic hash function, which is now so easy to reverse — that we could only use for verifying data against unintentional corruption.
 
     Characteristics of a good cryptographic hash function are:
@@ -65,5 +67,3 @@
         * SHA-2
         * SHA-3
         
-3. ### Sorting
-Implementation of binary search, bubblesort, insertion sort, linear sort, merge sort, quick sort, selection sort, shellsort algorithms - [here](https://github.com/patlub/algorithms)
