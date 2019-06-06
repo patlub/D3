@@ -22,7 +22,7 @@
 	
 	`ALTER TABLE employees ADD INDEX (number);`
 	
-	Once this index is set, next time you I to get the information for employee number 7, the service will go directly             to it using the index and will return the information much faster.
+	Once this index is set, next time you I have to get the information for employee number 7, the service will go directly             to it using the index and will return the information much faster.
 	
 1. #### Partitioning
 
