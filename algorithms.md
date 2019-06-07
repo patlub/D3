@@ -31,24 +31,7 @@
 
     At each iteration of its main loop, A* needs to determine which of its paths to extend. It does so based on the cost of the path and an estimate of the cost required to extend the path all the way to the goal
     
-    ```
-    
-    push startNode onto openList
-    while(openList is not empty) {
-     currentNode = find lowest f in openList
-     if currentNode is final, return the successful path
-     push currentNode onto closedList and remove from openList
-     foreach neighbor of currentNode {
-         if neighbor is not in openList {
-                save g, h, and f then save the current parent
-                add neighbor to openList
-         }
-         if neighbor is in openList but the current g is better than previous g {
-                 save g and f, then save the current parent
-         }
-     }
-
-    ```
+    [A-Star](https://briangrinstead.com/blog/astar-search-algorithm-in-javascript/)
     
 5. ### Hashing    
     A hashing algorithm is a cryptographic hash function. It is a mathematical algorithm that maps data of arbitrary size to a hash of a fixed size. It’s designed to be a one-way function, infeasible to invert. However, nowadays several hashing algorithms are being compromised. This happened to MD5, for example — a widely known hash function designed to be a cryptographic hash function, which is now so easy to reverse — that we could only use for verifying data against unintentional corruption.
